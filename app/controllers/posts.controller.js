@@ -64,5 +64,22 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-
+    Post.findByIdAndRemove(req.params.postId)
+    .then(post => {
+        if(!post) {
+            return res.status(404).send({
+                message: "post not found with id " + req.params.postId
+            });
+        }
+        res.send({message: "post deleted successfully!"});
+    }).catch(err => {
+        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "post not found with id " + req.params.postId
+            });
+        }
+        return res.status(500).send({
+            message: "Could not delete post with id " + req.params.postId
+        });
+    });
 };
