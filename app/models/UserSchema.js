@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const UserSchema = mongoose.Schema({
-    username:  {type: String, required: true, index: { unique: true }},
+    username:  {type: String},
     email: {
         type: String,
         required: true,
@@ -22,20 +22,4 @@ const UserSchema = mongoose.Schema({
     }]
 });
 
-
-
-/*UserSchema.statics.findByCredentials = async (email, password) => {
-    // Search for a user by email and password.
-    const user = await User.findOne({ email} )
-    if (!user) {
-        throw new Error({ error: 'Invalid login credentials' })
-    }
-    const isPasswordMatch = await bcrypt.compare(password, user.password)
-    if (!isPasswordMatch) {
-        throw new Error({ error: 'Invalid login credentials' })
-    }
-    return user
-}
-
-*/
 module.exports = mongoose.model('User', UserSchema);
