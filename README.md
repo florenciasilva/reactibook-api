@@ -65,3 +65,15 @@ https://reactibook-api.herokuapp.com/
 4. `npm install` para instalar las dependencias necesarias.
 5. `npm start` para correr el servidor local en `localhost:3000`. Esto creará un servidor con Express y además se conectara a tu base de datos. Se corre mediante `nodemon` por lo cual se refrescará automáticamente con cada cambio.
  
+## Dependencias
+
+8. Dependencias:
+   * "bcryptjs": "^2.4.3",
+   * "body-parser": "^1.19.0",
+   * "cors": "^2.8.5",
+   * "dotenv": "^8.2.0",
+   * "express": "^4.17.1",
+   * "jsonwebtoken": "^8.5.1",
+   * "mongoose": "^5.7.7",
+   * "nodemon": "^1.19.4",
+   * "validator": "^12.0.0"
