@@ -67,7 +67,6 @@ https://reactibook-api.herokuapp.com/
  
 ## Dependencias
 
-8. Dependencias:
    * "bcryptjs": "^2.4.3",
    * "body-parser": "^1.19.0",
    * "cors": "^2.8.5",
