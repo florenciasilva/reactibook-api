@@ -61,5 +61,7 @@ https://reactibook-api.herokuapp.com/
 
 1. Haz `fork` de este repositorio
 2. `git clone https://github.com/<tu-usuario>/reactibook-api.git`
-3. Crea tus variables de entorno en un nuevo archivo `.env`. Necesita una conexión a un cluster de mongoDB o un servidor local de Mongo (`DB_CONNECTION`), y un placeholder para JSON Web Tokens (`JWT_KEY`)
-4. `npm start` para correr el servidor local en `localhost:3000`. Esto creará un servidor con Express y además se conectara a tu base de datos.
+3. Crea tus variables de entorno en un nuevo archivo `.env`. Necesita una conexión a un cluster de mongoDB o un servidor local de Mongo (`DB_CONNECTION`), y un placeholder para JSON Web Tokens (`JWT_KEY`).
+4. `npm install` para instalar las dependencias necesarias.
+5. `npm start` para correr el servidor local en `localhost:3000`. Esto creará un servidor con Express y además se conectara a tu base de datos. Se corre mediante `nodemon` por lo cual se refrescará automáticamente con cada cambio.
+ 
