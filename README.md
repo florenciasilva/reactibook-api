@@ -26,3 +26,25 @@ Creada con NodeJS, Express y Mongoose, hosteada en Heroku
 `PUT /addFriend/:userEmail` -> Agrega amigo a lista de amigos de un usuario en específico (WIP). Espera `_id y email`.
 
 `DELETE /deleteUser/:userId` -> Eliminar un usuario en específico. Espera `_id`
+
+
+## Boilerplate
+```
+./reactibook-api
+│
+├── app
+│      ├── controllers
+│      │     ├── post.controller.js
+│      │     └── user.controller.js
+│      ├── routes
+│      │     ├── post.routes.js
+│      │     └── user.routes.js
+│      ├── models
+│      │     ├── PostSchema.js
+│      └──   └── UserSchema.js
+│
+├──  .gitignore
+├──  index.js
+├──  database.config.js
+└──  package.json
+```
