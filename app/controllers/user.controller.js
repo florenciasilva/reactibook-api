@@ -33,7 +33,7 @@ exports.findAll = (req, res) => {
 
 };
 
-exports.findOne = async (req, res) => {
+exports.findOne = (req, res) => {
     if(!req.body.password || !req.body.email) {
         return res.status(400).send({
             message: "All fields should be filled"
@@ -42,7 +42,7 @@ exports.findOne = async (req, res) => {
         const email = req.body.email
         User.findOne({email})
         .then(user => {
-            const isPasswordMatch = await bcrypt.compare(req.body.password, user.password)
+            const isPasswordMatch = bcrypt.compare(req.body.password, user.password)
             if (!isPasswordMatch) {
                 throw new Error({ error: 'Invalid login credentials' })
             }
@@ -53,9 +53,19 @@ exports.findOne = async (req, res) => {
         })
 };
 
-/*exports.update = (req, res) => {
-
-};*/
+exports.update = (req, res) => {
+    if(!req.body.newFriend || !req.body._id) {
+        return res.status(400).send({
+            message: "Find a valid friend :o"
+        });
+    }
+    User.findByIdAndUpdate(req.body._id)
+    .then(user => {
+        user.friends.push(req.body.newFriend)
+        res.send(user)
+    })
+    .catch(err => res.send(err.message))
+};
 
 exports.delete = (req, res) => {
     User.findByIdAndRemove(req.params.userId)

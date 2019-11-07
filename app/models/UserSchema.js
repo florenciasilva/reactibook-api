@@ -19,7 +19,8 @@ const UserSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+    friends: Array
 });
 
 module.exports = mongoose.model('User', UserSchema);

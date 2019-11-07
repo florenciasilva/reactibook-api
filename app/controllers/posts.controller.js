@@ -6,12 +6,13 @@ exports.create = (req, res) => {
             message: "Posts cannot be empty"
         });
     }
-
     const post = new Post({
-        user: req.body.user || "No name",
-        content: req.body.content
+        username: req.body.username,
+        email: req.body.email,
+        content: req.body.content,
+        privacy: req.body.privacy,
+        friends: req.body.friends
     });
-
     post.save()
     .then(data => {
         res.send(data);

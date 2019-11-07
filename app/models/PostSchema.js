@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
 const PostSchema = mongoose.Schema({
-    user: String,
+    username: String,
     content: String,
-    likes: Number
+    email: String,
+    likes: Number,
+    privacy: Boolean,
+    friends: Array
 }, {
     timestamps: true
 });
