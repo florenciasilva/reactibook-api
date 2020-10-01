@@ -1,6 +1,6 @@
 # Reactibook API
 
-Creada con NodeJS, Express y Mongoose, hosteada en Heroku
+Made with NodeJS, Express and Mongoose. Hosted with Heroku
 
 https://reactibook-api.herokuapp.com/
 
@@ -14,25 +14,29 @@ https://reactibook-api.herokuapp.com/
 
 ### Posts
 
-`POST /post` -> Creación de post en MongoDB Atlas Cluster. Espera `username, email, content, privacy y friends`.
+`POST /post` -> Post addition in MongoDB Atlas Cluster
+Expects `username, email, content, privacy y friends`.
 
-`GET /posts` -> Obtener posts de la base de datos.
+`GET /posts` -> Get all posts from database
 
-`PUT /edit/:postId` -> Edición de un post en específico. Espera `_id y content`
+`PUT /edit/:postId` -> Edit a given post. Expects `_id y content`
 
-`DELETE /delete/:postId` -> Eliminar un post en específico. Espera `_id`
+`DELETE /delete/:postId` -> Delete a given post.  Expects `_id`
 
 ### Usuarios
 
-`POST /newUser` -> Creación de post en MongoDB Atlas Cluster. Espera `username, email, content y password`.
+`POST /newUser` -> User addition in MongoDB Atlas Cluster. 
+Expects `username, email, content y password`.
 
-`GET /allUsers` -> Obtener todos los usuarios de la base de datos.
+`GET /allUsers` -> Get all users from data base
 
-`POST /user/:userEmail` -> Obtiene un usuario en específico. Espera `email y password`
+`POST /user/:userEmail` -> Get a specific user. Expects `email y password`
 
-`PUT /addFriend/:userEmail` -> Agrega amigo a lista de amigos de un usuario en específico (WIP). Espera `_id y email`.
+`PUT /addFriend/:userEmail` -> Adds a 'friend' to a specific users friend's list (WIP). Expects `_id y email`.
 
-`DELETE /deleteUser/:userId` -> Eliminar un usuario en específico. Espera `_id`
+
+
+`DELETE /deleteUser/:userId` -> Delete a specific user. Expects `_id`
 
 
 ## Boilerplate
@@ -59,13 +63,14 @@ https://reactibook-api.herokuapp.com/
 
 ## Uso
 
-1. Haz `fork` de este repositorio
-2. `git clone https://github.com/<tu-usuario>/reactibook-api.git`
-3. Crea tus variables de entorno en un nuevo archivo `.env`. Necesita una conexión a un cluster de mongoDB o un servidor local de Mongo (`DB_CONNECTION`), y un placeholder para JSON Web Tokens (`JWT_KEY`).
-4. `npm install` para instalar las dependencias necesarias.
-5. `npm start` para correr el servidor local en `localhost:3000`. Esto creará un servidor con Express y además se conectara a tu base de datos. Se corre mediante `nodemon` por lo cual se refrescará automáticamente con cada cambio.
- 
-## Dependencias
+1. `Fork` this repo.
+2. `git clone https://github.com/<your-username>/reactibook-api.git`
+3. Add your environmental variables in a new `.env`. You need to connect to a MongoDB cluster or a local Mongo server (`DB_CONNECTION`), and add a placeholder for JSON Web Tokens (`JWT_KEY`).
+4. `npm install`
+5. `npm start` fires up a local server in `localhost:3000`. This will create an Express server and will also connect you to your data base. Runs with `nodemon`, so it includes hot-reload.
+
+
+## Dependencies
 
    * "bcryptjs": "^2.4.3",
    * "body-parser": "^1.19.0",
